@@ -1,0 +1,77 @@
+Subject: Weekly Product Pulse + Customer Clarification =?utf-8?b?4oCU?= Groww
+To:
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+WEEKLY PRODUCT PULSE
+
+# Groww weekly product pulse
+
+**Review window:** 23 Jul=E2=80=9325 Sep 2026 =C2=B7 **Sample:** 8 public Red=
+dit excerpts =C2=B7 **Method:** manual clustering; convenience sample, not re=
+presentative.
+
+## Top themes
+
+1. **Sell proceeds and charge breakdown (5/8):** users ask why net sale proce=
+eds are lower than the sale value and what =E2=80=9Cexternal charges=E2=80=9D=
+ include.
+2. **Charge visibility in reporting (2/8):** users say order summaries and co=
+ntract notes do not make charge details easy to find.
+3. **Brokerage rule clarity (1/8):** the =E2=82=B95 minimum versus =E2=82=B92=
+0 or 0.1% rule is unclear for small orders.
+
+## User voice
+
+- =E2=80=9CHow does calculating work in the Groww app? ... I sold 1 share for=
+ 35.88. ... leaving 29.69. What happened here?=E2=80=9D =E2=80=94 Aug 14
+- =E2=80=9C...about Rs.20 per executed order as brokerage ... Rs. 5 is minimu=
+m which I do not understand.=E2=80=9D =E2=80=94 Aug 24
+- =E2=80=9C...i sell the stocks for 324 and how does it only show 200 and wha=
+t are these external charges.=E2=80=9D =E2=80=94 Sep 25
+
+## Key observation
+
+The strongest signal is confusion at sale: users cannot readily map the sale =
+value to net proceeds and deductions. This is a small-sample signal, not a me=
+asured platform-wide trend.
+
+## Product actions
+
+1. Preview estimated net proceeds and itemized charges before sell confirmati=
+on.
+2. Explain the =E2=82=B95 minimum / =E2=82=B920-or-0.1% brokerage rule with a=
+ small-order example.
+3. Link completed orders to their contract-note breakdown and a plain-languag=
+e charge glossary.
+
+
+CUSTOMER FEE EXPLANATION (REUSABLE SUPPORT SNIPPET)
+
+=E2=80=A2 The amount received after selling shares can be lower than the sale=
+ value because several charges may apply; the exact amount depends on the tra=
+de and exchange.
+=E2=80=A2 Brokerage is Groww=E2=80=99s trading fee. For equity orders, Groww =
+lists brokerage as the lower of =E2=82=B920 or 0.1% of the order value, subje=
+ct to a =E2=82=B95 minimum.
+=E2=80=A2 A DP (Depository Participant) charge applies when shares are debite=
+d from your demat account on a sale. Groww=E2=80=99s pricing page lists a dep=
+ository component and a Groww component; the Groww component is waived when t=
+he debit value is below =E2=82=B9100.
+=E2=80=A2 Other applicable line items can include STT, exchange transaction c=
+harges, SEBI turnover charge, stamp duty (buy side), IPFT, and GST on specifi=
+ed charges. Not every item applies to every side/type of trade.
+=E2=80=A2 For the exact transaction-level breakdown, check the contract note =
+and Groww=E2=80=99s charge/pricing details; order value and net proceeds are =
+different amounts.
+=E2=80=A2 This snippet explains common charge components and is not a calcula=
+tion for a specific trade. Use Groww=E2=80=99s brokerage calculator for an es=
+timate.
+
+Official sources:
+https://groww.in/pricing
+https://groww.in/help/stocks/sx-pricing/what-is-the-charge-for-buy-order-deli=
+very
+
+This is a local draft only. It has not been sent.
