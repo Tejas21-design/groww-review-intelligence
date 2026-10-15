@@ -29,8 +29,8 @@ The LLM response uses a strict JSON Schema for review labels, issue, quote IDs, 
 
 The checkbox and button are the human approval gate. After approval, the browser saves a JSONL entry in browser local storage and creates an `.eml` file for download. This works on a static Vercel deployment without a server-side API:
 
-1. Appends the required structured fields (`date`, `top_themes`, `weekly_pulse`, `identified_fee_issue`, `explanation_bullets`, `source_links`) plus approval metadata to a browser-local Notes log. Use **Download Notes log** to export it.
-2. Creates a downloadable email draft with subject **Weekly Product Pulse + Customer Clarification — Groww** and the pulse plus reusable fee snippet in the body.
+1. Appends the required structured fields (`date`, `top_themes`, `weekly_pulse`, `identified_fee_issue`, `explanation_bullets`, `source_links`) plus approval metadata to a browser-local Notes log. Use **Open Notes log** to view or save it.
+2. Creates an email draft with subject **Weekly Product Pulse + Customer Clarification — Groww** and the pulse plus reusable fee snippet in the body. Use **Open email draft** or **Download .eml draft**.
 
 This simulates Notes/Docs and Gmail draft actions for the prototype. It is not an MCP server or a live connection to those providers, and it never sends email. The Notes log stays in the same browser profile; it is not synced to a server or shared across devices. Output links appear only after approval. The analysis runs on demand after CSV upload; it is not a real-time review feed.
 
