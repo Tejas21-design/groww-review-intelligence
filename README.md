@@ -27,12 +27,12 @@ The LLM response uses a strict JSON Schema for review labels, issue, quote IDs, 
 
 ## Approval and simulated MCP actions
 
-The checkbox and button are the human approval gate. The browser sends `approved: true` and the current analysis to the local `/api/approve` endpoint only after that action. The endpoint rejects requests without approval, then performs two local, MCP-style simulated write actions:
+The checkbox and button are the human approval gate. After approval, the browser saves a JSONL entry in browser local storage and creates an `.eml` file for download. This works on a static Vercel deployment without a server-side API:
 
-1. Appends the required structured fields (`date`, `top_themes`, `weekly_pulse`, `identified_fee_issue`, `explanation_bullets`, `source_links`) plus approval metadata to `notes.jsonl`.
-2. Creates `email_drafts/weekly-product-pulse.eml` with subject **Weekly Product Pulse + Customer Clarification — Groww** and the pulse plus reusable fee snippet in the body.
+1. Appends the required structured fields (`date`, `top_themes`, `weekly_pulse`, `identified_fee_issue`, `explanation_bullets`, `source_links`) plus approval metadata to a browser-local Notes log. Use **Download Notes log** to export it.
+2. Creates a downloadable email draft with subject **Weekly Product Pulse + Customer Clarification — Groww** and the pulse plus reusable fee snippet in the body.
 
-This simulates Notes/Docs and Gmail draft actions for the prototype. It is not an MCP server or a live connection to those providers, and it never sends email. Output links appear only after approval. The analysis runs on demand after CSV upload; it is not a real-time review feed.
+This simulates Notes/Docs and Gmail draft actions for the prototype. It is not an MCP server or a live connection to those providers, and it never sends email. The Notes log stays in the same browser profile; it is not synced to a server or shared across devices. Output links appear only after approval. The analysis runs on demand after CSV upload; it is not a real-time review feed.
 
 ## Fee issue identified
 
@@ -53,15 +53,12 @@ The CSV is a manually curated, convenience sample of public Reddit posts/comment
 
 ## Deploy
 
-The app is a small Python standard-library web server. The repository includes a `Procfile` and `railway.json` for Railway deployment:
+The static `index.html` app can be deployed directly to Vercel with Framework Preset **Other**, no build command, and the repository root as the output directory. CSV keyword analysis and approval-generated downloads run in the browser. The optional OpenAI analysis endpoint requires the Python server; for local development:
 
-1. Push this directory to a GitHub repository.
-2. In Railway, create a project from that GitHub repository and deploy the `outputs` project root (or make this repository root the app directory).
-3. Generate a public domain in Railway. The health check is `/api/status`.
-4. Keep `OPENAI_API_KEY` unset unless you intentionally want to enable the optional OpenAI mode; never commit API keys.
+The repository also includes a `Procfile` and `railway.json` if you want to host the optional Python API on Railway. Keep `OPENAI_API_KEY` unset unless you intentionally want to enable optional OpenAI analysis; never commit API keys.
 
-The browser analyzes uploaded CSVs locally in keyword mode. If you approve a result, its selected quotes and summary are sent to the app server to create the Notes entry and `.eml` draft. Do not upload confidential or personal customer data to a public demo. The sample feedback is a small public Reddit convenience sample. Hosting uses local file writes for this prototype; generated records are not a durable production database.
+The browser analyzes uploaded CSVs locally in keyword mode. On approval, it keeps the appended Notes log in browser local storage and offers it as a download; it also offers the `.eml` draft as a download. Do not upload confidential or personal customer data to a public demo. The sample feedback is a small public Reddit convenience sample.
 
 ## Submission status and limitations
 
-The approval gate simulates internal Notes/Docs and Gmail draft actions; it is not a live MCP server or a connection to those providers, and it never sends email. OpenAI analysis is implemented but remains unavailable until a valid API key with model access is configured. There is no live review feed. The prepared Notes entry and email draft contain the approved sample output; uploaded analyses are appended only after approval.
+The approval gate simulates internal Notes/Docs and Gmail draft actions; it is not a live MCP server or a connection to those providers, and it never sends email. OpenAI analysis requires the optional Python server and a valid API key with model access. There is no live review feed. Approval saves entries in browser-local storage and offers the Notes log and email draft as downloads.
